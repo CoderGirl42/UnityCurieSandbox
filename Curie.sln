@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curie.CSharp.Plugins", "Curie.CSharp.Plugins.csproj", "{B830A219-D643-5219-8FAC-B34A67ADB7E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curie.CSharp", "Curie.CSharp.csproj", "{B3EE5F3F-CD43-059E-0029-50E5CB287CC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curie.CSharp.Editor", "Curie.CSharp.Editor.csproj", "{34842412-2146-83E6-C48E-ED28775C6880}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B830A219-D643-5219-8FAC-B34A67ADB7E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B830A219-D643-5219-8FAC-B34A67ADB7E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B830A219-D643-5219-8FAC-B34A67ADB7E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B830A219-D643-5219-8FAC-B34A67ADB7E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3EE5F3F-CD43-059E-0029-50E5CB287CC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3EE5F3F-CD43-059E-0029-50E5CB287CC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3EE5F3F-CD43-059E-0029-50E5CB287CC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3EE5F3F-CD43-059E-0029-50E5CB287CC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34842412-2146-83E6-C48E-ED28775C6880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34842412-2146-83E6-C48E-ED28775C6880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34842412-2146-83E6-C48E-ED28775C6880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34842412-2146-83E6-C48E-ED28775C6880}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
