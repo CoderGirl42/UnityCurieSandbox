@@ -104,8 +104,8 @@ void loop() {
 
 float convertRawAcceleration(int aRaw) {
   // since we are using 2G range
-  // -2g maps to a raw value of -32768
-  // +2g maps to a raw value of 32768
+  // -1g maps to a raw value of -32768
+  // +1g maps to a raw value of 32768
 
   float a = (aRaw * 2.0) / 32768.0;
 
