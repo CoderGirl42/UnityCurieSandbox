@@ -50,7 +50,19 @@ public class SerialGyro : MonoBehaviour {
             pitch = float.Parse(ypr[1]); // convert to float pitch
             roll = float.Parse(ypr[2]); // convert to float roll
 
-            transform.eulerAngles += new Vector3(pitch, yaw, roll);
+            float yaw_degrees = yaw * 180.0f / 3.14159f; // conversion to degrees
+            if (yaw_degrees < 0) yaw_degrees += 360.0f; // convert negative to positive angles
+
+            float pitch_degrees = pitch * 180.0f / 3.14159f; // conversion to degrees
+            if (pitch_degrees < 0) pitch_degrees += 360.0f; // convert negative to positive angles
+
+            float roll_degrees = roll * 180.0f / 3.14159f; // conversion to degrees
+            if (roll_degrees < 0) roll_degrees += 360.0f; // convert negative to positive angles
+
+            Quaternion fromRotation = transform.rotation;
+            Quaternion toRotation = Quaternion.Euler(pitch_degrees, yaw_degrees, roll_degrees);
+            transform.rotation = Quaternion.Lerp(fromRotation, toRotation, Time.deltaTime * 20);
+
         }
     }
 }
