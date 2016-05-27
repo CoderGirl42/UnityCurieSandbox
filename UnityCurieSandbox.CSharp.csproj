@@ -67,6 +67,7 @@
     <Compile Include="Assets\RespawnScript.cs" />
     <Compile Include="Assets\SerialAccelerometer.cs" />
     <Compile Include="Assets\SerialGyro.cs" />
+    <Compile Include="Assets\SerialPotentiometer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />

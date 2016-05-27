@@ -22,7 +22,7 @@ public class SerialGyro : MonoBehaviour {
         serial.Open();
 
         // Calibrate the device.
-        serial.Write("c");
+        serial.Write("r");
     }
 
     void OnDestroy() {
@@ -51,14 +51,6 @@ public class SerialGyro : MonoBehaviour {
             roll = float.Parse(ypr[2]); // convert to float roll
 
             transform.eulerAngles += new Vector3(pitch, yaw, roll);
-
-            //transform.Rotate(new Vector3(1, 0, 0), pitch);
-            //transform.Rotate(new Vector3(0, 1, 0), yaw);
-            //transform.Rotate(new Vector3(0, 0, 1), roll);
-
-            //transform.Rotate(Vector3.right * pitch);
-            //transform.Rotate(Vector3.up * yaw);
-            //transform.Rotate(Vector3.forward * roll);
         }
     }
 }
