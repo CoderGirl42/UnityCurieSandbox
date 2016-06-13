@@ -1,21 +1,24 @@
 ﻿using UnityEngine;
 using System.IO.Ports;
 using System.Threading;
+using System.Collections;
 
-public class SerialGyro : MonoBehaviour {
-
+public class GyroCamera : MonoBehaviour
+{
     private float yaw = 0, pitch = 0, roll = 0;
     private float yaw_degrees = 0, pitch_degrees = 0, roll_degrees = 0;
+
     private SerialPort serial;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         // Create the Serial Port - Currently uses first port may need to change for other implimentations.
         serial = new SerialPort(SerialPort.GetPortNames()[0], 9600, Parity.None, 8, StopBits.One);
 
         // Setup Serial Port Settings.
         serial.DtrEnable = true;
-        serial.RtsEnable = true;  
+        serial.RtsEnable = true;
         serial.ReadTimeout = 1000;
 
         Thread.Sleep(100); //allow time for settings to be set. Unity has issues without this.
@@ -27,41 +30,47 @@ public class SerialGyro : MonoBehaviour {
         serial.Write("r");
     }
 
-    void OnDestroy() {
+    void OnDestroy()
+    {
         // Cleanup serial port.
-        if(serial.IsOpen) {
+        if (serial.IsOpen)
+        {
             serial.Close();
         }
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
         // Send a command to the Curie
         serial.Write("s");
 
         // Recieve the response from Curie
         var msg = serial.ReadLine();
-        
+
         // Parse the Values from the response message.
-        if (msg != string.Empty) {
+        if (msg != string.Empty)
+        {
             string[] ypr = msg.Split(',');
 
-            yaw = float.Parse(ypr[0]); // convert to float yaw
-            pitch = float.Parse(ypr[1]); // convert to float pitch
-            roll = float.Parse(ypr[2]); // convert to float roll
+            float.TryParse(ypr[0], out yaw); // convert to float yaw
+            float.TryParse(ypr[1], out pitch); // convert to float pitch
+            float.TryParse(ypr[2], out roll); // convert to float roll
 
             yaw_degrees = yaw * 180.0f / 3.14159f; // conversion to degrees
-            //if (yaw_degrees < 0) yaw_degrees += 360.0f; // convert negative to positive angles
+            if (yaw_degrees < 0) yaw_degrees += 360.0f; // convert negative to positive angles
 
             pitch_degrees = pitch * 180.0f / 3.14159f; // conversion to degrees
-            //if (pitch_degrees < 0) pitch_degrees += 360.0f; // convert negative to positive angles
+            if (pitch_degrees < 0) pitch_degrees += 360.0f; // convert negative to positive angles
 
             roll_degrees = roll * 180.0f / 3.14159f; // conversion to degrees
-            //if (roll_degrees < 0) roll_degrees += 360.0f; // convert negative to positive angles
+            if (roll_degrees < 0) roll_degrees += 360.0f; // convert negative to positive angles
 
-            Quaternion fromRotation = transform.localRotation;
-            Quaternion toRotation = Quaternion.Euler(pitch_degrees, yaw_degrees, roll_degrees);
-            transform.localRotation = Quaternion.Slerp(fromRotation, toRotation, Time.deltaTime * 10);
+            Quaternion fromRotation = transform.rotation;
+            Quaternion toRotation = Quaternion.Euler(pitch_degrees, yaw_degrees, -roll_degrees);
+
+            transform.rotation = Quaternion.Slerp(fromRotation, toRotation, Time.deltaTime * 10);
+
         }
     }
 

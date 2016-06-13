@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\FinishScript.cs" />
+    <Compile Include="Assets\GyroCamera.cs" />
     <Compile Include="Assets\RespawnScript.cs" />
     <Compile Include="Assets\SerialAccelerometer.cs" />
     <Compile Include="Assets\SerialGyro.cs" />

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{212D3FE6-5447-465E-85CA-E9780BCFB059}</ProjectGuid>
+    <RootNamespace>ArduinoSensorSample</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\hardware\arc32\1.0.5\cores\arduino;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\hardware\arc32\1.0.5\cores\arduino\avr;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\hardware\arc32\1.0.5\variants\arduino_101;C:\Users\Marissa\Documents\GitHub\UnityCurieSandbox\Sketch\ArduinoSensorSample;C:\Program Files (x86)\Arduino\libraries;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\hardware\arc32\1.0.5\libraries;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\5ft4w1rr.v2s\Micro Platforms\default\debuggers;C:\Users\Marissa\Documents\Arduino\libraries;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\hardware\arc32\1.0.5\system/libarc32_arduino101/common;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\hardware\arc32\1.0.5\system/libarc32_arduino101/drivers;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\hardware\arc32\1.0.5\system/libarc32_arduino101/bootcode;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\hardware\arc32\1.0.5\system/libarc32_arduino101/framework/include;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\tools\arc-elf32\1.6.4+1.0\1.6.4+1.0\include;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\tools\arc-elf32\1.6.4+1.0\arc-elf32\include;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\tools\arc-elf32\1.6.4+1.0\lib\gcc\arc-elf32\4.8.3\include;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\tools\arc-elf32\1.6.4+1.0\lib\gcc\arc-elf32\4.8.3\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>C:\Users\Marissa\Documents\GitHub\UnityCurieSandbox\Sketch\ArduinoSensorSample\__vm\.ArduinoSensorSample.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <PreprocessorDefinitions>__ARDUINO_ARC__;F_CPU=32000000L;ARDUINO=10609;ARDUINO_ARC32_TOOLS;ARDUINO_ARCH_ARC32;__CPU_ARC__;CLOCK_SPEED=32;CONFIG_SOC_GPIO_32;CONFIG_SOC_GPIO_AON;INFRA_MULTI_CPU_SUPPORT;CFW_MULTI_CPU_SUPPORT;HAS_SHARED_MEM;__cplusplus=201103L;GCC_VERSION=40803;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\hardware\arc32\1.0.5\cores\arduino;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\hardware\arc32\1.0.5\cores\arduino\avr;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\hardware\arc32\1.0.5\variants\arduino_101;C:\Users\Marissa\Documents\GitHub\UnityCurieSandbox\Sketch\ArduinoSensorSample;C:\Program Files (x86)\Arduino\libraries;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\hardware\arc32\1.0.5\libraries;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\5ft4w1rr.v2s\Micro Platforms\default\debuggers;C:\Users\Marissa\Documents\Arduino\libraries;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\hardware\arc32\1.0.5\system/libarc32_arduino101/common;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\hardware\arc32\1.0.5\system/libarc32_arduino101/drivers;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\hardware\arc32\1.0.5\system/libarc32_arduino101/bootcode;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\hardware\arc32\1.0.5\system/libarc32_arduino101/framework/include;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\tools\arc-elf32\1.6.4+1.0\1.6.4+1.0\include;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\tools\arc-elf32\1.6.4+1.0\arc-elf32\include;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\tools\arc-elf32\1.6.4+1.0\lib\gcc\arc-elf32\4.8.3\include;C:\Users\Marissa\AppData\Local\arduino15\packages\Intel\tools\arc-elf32\1.6.4+1.0\lib\gcc\arc-elf32\4.8.3\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ArduinoSensorSample.ino">
+      <FileType>CppCode</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="__vm\.ArduinoSensorSample.vsarduino.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

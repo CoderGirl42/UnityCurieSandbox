@@ -8,6 +8,7 @@ public class SerialPotentiometer : MonoBehaviour {
     private float rotation;
     public bool invert = false;
     private int go;
+
     // Use this for initialization
     void Start () {
         // Create the Serial Port - Currently uses first port may need to change for other implimentations.
@@ -27,26 +28,21 @@ public class SerialPotentiometer : MonoBehaviour {
         serial.Write("c");
     }
 
-    void OnDestroy()
-    {
+    void OnDestroy() {
         // Cleanup Serial connection.
-        if (serial.IsOpen)
-        {
+        if (serial.IsOpen) {
             serial.Close();
         }
     }
 
-    public void Update()
-    {
+    public void Update() {
         var msg = serial.ReadLine();
 
-        if (msg != string.Empty)
-        {
+        if (msg != string.Empty) {
             string[] vars = msg.Split(',');
             rotation = float.Parse(vars[0]);
 
-            if(invert)
-            {
+            if(invert) {
                 rotation *= -1;
             }
 
@@ -56,15 +52,13 @@ public class SerialPotentiometer : MonoBehaviour {
 
             go = int.Parse(vars[1]);
 
-            if (go == 1)
-            {
+            if (go == 1) {
                 transform.Translate(Vector3.forward * Time.deltaTime * 10);
             }
         }
     }
 
-    public void OnGUI()
-    {
+    public void OnGUI() {
         GUI.Label(new Rect(10, 10, 100, 20), go == 1 ? "LED ON" : "LED OFF");
     }
 }

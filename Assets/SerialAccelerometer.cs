@@ -48,9 +48,9 @@ public class SerialAccelerometer : MonoBehaviour {
         if (msg != string.Empty) {
             string[] ypr = msg.Split(',');
 
-            ax = float.Parse(ypr[3]);
-            ay = float.Parse(ypr[4]);
-            az = float.Parse(ypr[5]);
+            float.TryParse(ypr[3], out ax);
+            float.TryParse(ypr[4], out ay);
+            float.TryParse(ypr[5], out az);
         }
 
         // Create gravity vector
